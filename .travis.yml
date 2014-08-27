@@ -2,7 +2,7 @@ language: android
 jdk: oraclejdk7
 env:
   matrix:
-    - ANDROID_TARGET=android-20  ANDROID_ABI=armeabi-v7a
+    - ANDROID_TARGET=android-19  ANDROID_ABI=sys-img-armeabi-v7a-android-19
 android:
   components:
   
@@ -10,10 +10,12 @@ android:
     - tools
   
     # BuildTools version
-    - build-tools-20.0.0
+    - build-tools-19.1.0
     
     # SDK version used for compiling
-    - android-20
+    - android-19
+	
+    - sys-img-armeabi-v7a-android-19
 
 # Create, Start and Wait
 before_script:
