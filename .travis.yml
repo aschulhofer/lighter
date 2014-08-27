@@ -17,6 +17,13 @@ android:
 
     - sys-img-armeabi-v7a-android-19
 
+# newer version of gradle
+before_install:
+  - wget http://services.gradle.org/distributions/gradle-1.11-bin.zip
+  - unzip -qq gradle-1.10-bin.zip
+  - export GRADLE_HOME=$PWD/gradle-1.10
+  - export PATH=$GRADLE_HOME/bin:$PATH
+
 # Create, Start and Wait
 before_script:
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
