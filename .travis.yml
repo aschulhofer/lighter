@@ -9,7 +9,7 @@ android:
     - build-tools-19.1.0
     
     # SDK version used for compiling
-    - android-19
+    #- android-19
 
 # Create, Start and Wait
 before_script:
