@@ -19,9 +19,9 @@ android:
 
 # newer version of gradle
 before_install:
-  - wget http://services.gradle.org/distributions/gradle-1.11-bin.zip
-  - unzip -qq gradle-1.11-bin.zip
-  - export GRADLE_HOME=$PWD/gradle-1.11
+  - wget http://services.gradle.org/distributions/gradle-1.12-bin.zip
+  - unzip -qq gradle-1.12-bin.zip
+  - export GRADLE_HOME=$PWD/gradle-1.12
   - export PATH=$GRADLE_HOME/bin:$PATH
 
 # Create, Start and Wait
@@ -31,4 +31,6 @@ before_script:
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
   
-script: gradle build connectedCheck
+script: 
+  - cd Lighter
+  - gradle build connectedCheck
