@@ -22,11 +22,9 @@ public class MainActivityTest {
         TextView helloWorldLabel = (TextView) activity.findViewById(R.id.tf_hello_world);
 
         Assert.assertNotNull("TextView hello world is null", helloWorldLabel);
-
-        String expectedLabelText = activity.getString(R.string.hello_world);
-
         Assert.assertNotNull("TextView text is null", helloWorldLabel.getText());
 
+        String expectedLabelText = activity.getString(R.string.hello_world);
         String helloWorldLabelText = helloWorldLabel.getText().toString();
 
         Assert.assertEquals("TextView not containing right text", expectedLabelText, helloWorldLabelText);

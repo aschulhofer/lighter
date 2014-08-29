@@ -7,6 +7,9 @@ android {
 
     sourceSets {
         androidTest.setRoot('test')
+        androidTest {
+            java.srcDirs = ['src/test/java']
+        }
     }
 
     defaultConfig {
