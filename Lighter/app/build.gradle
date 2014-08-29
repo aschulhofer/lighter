@@ -1,11 +1,16 @@
 apply plugin: 'com.android.application'
+apply plugin: 'robolectric'
 
 android {
     compileSdkVersion 19
     buildToolsVersion "19.1.0"
 
+    sourceSets {
+        androidTest.setRoot('test')
+    }
+
     defaultConfig {
-        applicationId "woodstick.at.lighter"
+        applicationId "at.woodstick.lighter"
         minSdkVersion 14
         targetSdkVersion 19
         versionCode 1
@@ -19,6 +24,21 @@ android {
     }
 }
 
+//robolectric {
+//    include '**/*Test.class'
+//
+//    maxHeapSize = '2048m'
+//
+//    ignoreFailures false
+//
+////    afterTest { descriptor, result ->
+////        println "Executing test for {$descriptor.name} with result: ${result.resultType}"
+////    }
+//}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestCompile 'junit:junit:4.11'
+    androidTestCompile 'org.robolectric:robolectric:2.3'
 }

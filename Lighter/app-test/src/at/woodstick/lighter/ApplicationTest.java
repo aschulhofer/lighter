@@ -1,4 +1,4 @@
-package woodstick.at.lighter;
+package at.woodstick.lighter;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
@@ -9,5 +9,10 @@ import android.test.ApplicationTestCase;
 public class ApplicationTest extends ApplicationTestCase<Application> {
     public ApplicationTest() {
         super(Application.class);
+    }
+
+    public void testApplication() {
+        Application app = getApplication();
+        Context appContext = app.getApplicationContext();
     }
 }
