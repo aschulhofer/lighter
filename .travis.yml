@@ -35,5 +35,5 @@ before_script:
   
 script: 
   - cd Lighter
-  - gradle build connectedCheck
+  #- gradle build connectedCheck
   - mvn clean install

@@ -2,15 +2,14 @@ package at.woodstick.lighter;
 
 import android.widget.TextView;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
 
 import at.woodstick.lighter.MainActivity;
-import org.robolectric.Robolectric;
-import org.robolectric.util.ActivityController;
-import org.robolectric.RobolectricTestRunner;
 
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {

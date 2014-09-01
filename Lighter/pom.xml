@@ -12,11 +12,6 @@
     <version>1.0</version>
     <name>Lighter Parent Android</name>
 
-    <modules>
-        <module>app</module>
-        <module>app-test</module>
-    </modules>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <platform.version>4.1.1.4</platform.version>
@@ -52,4 +47,23 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <profiles>
+        <profile>
+            <id>integration-tests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>app</module>
+                <module>app-test</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>unit-tests</id>
+            <modules>
+                <module>app</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>

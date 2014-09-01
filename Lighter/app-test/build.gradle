@@ -1,18 +1,29 @@
-apply plugin: 'com.android.application'
+evaluationDependsOn(':app')
 
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
     buildToolsVersion "19.1.0"
 
+    packagingOptions {
+        exclude 'AndroidManifest.xml'
+        exclude 'classes.dex'
+    }
+
     sourceSets {
         main {
-            java.srcDirs = ['src/main/java']
+            manifest.srcFile 'AndroidManifest.xml'
+//            java.srcDirs = ['src']
+//            resources.srcDirs = ['src']
+//            renderscript.srcDirs = ['src']
+//            res.srcDirs = ['res']
+//            assets.srcDirs = ['assets']
         }
 
-        androidTest.setRoot('test')
+        androidTest.setRoot('src/main')
         androidTest {
-            java.srcDirs = ['src/test/java']
+            java.srcDirs = ['src/main/java']
         }
     }
 
@@ -31,23 +42,7 @@ android {
     }
 }
 
-apply plugin: 'robolectric'
-
-//robolectric {
-//    include '**/*Test.class'
-//
-//    maxHeapSize = '2048m'
-//
-//    ignoreFailures false
-//
-////    afterTest { descriptor, result ->
-////        println "Executing test for {$descriptor.name} with result: ${result.resultType}"
-////    }
-//}
-
 dependencies {
+    compile project(':app')
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
-    testCompile 'junit:junit:4.11'
-    testCompile 'org.robolectric:robolectric:2.3'
 }
