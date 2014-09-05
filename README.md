@@ -1,10 +1,30 @@
-Lighter
-=========
+# Lighter
 
-Run unit-tests:
+Android Test-Setup Project
 
-mvn clean test -Punit-test
+### Maven:
 
-Run unit and integration-tests:
+#### Profile - 'unit-tests'
 
-mvn clean test
+* Run unit-tests:
+
+  `mvn [clean] test -Punit-tests`
+
+
+* Run unit tests and run app:
+
+  `mvn [clean] install anroid:run -Punit-tests`
+
+#### Profile - 'integration-tests' (default)
+
+* Run unit and integration-tests:
+
+  `mvn [clean] install`
+
+* Run unit and integration-tests and run app:
+  
+  `mvn [clean] install android:run`
+
+### Gradle:
+
+* still in work
