@@ -36,4 +36,4 @@ before_script:
 script: 
   - cd Lighter
   #- gradle build connectedCheck
-  - mvn clean install
+  - mvn clean install -Pintegration-tests
