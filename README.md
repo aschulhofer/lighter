@@ -2,6 +2,8 @@
 
 Android Test-Setup Project
 
+[![Build Status](https://travis-ci.org/aschulhofer/lighter.svg?branch=master)](https://travis-ci.org/aschulhofer/lighter)
+
 ### Maven:
 
 #### Profile - 'unit-tests'  (default)
