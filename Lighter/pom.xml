@@ -49,21 +49,26 @@
     </build>
 
     <profiles>
+
+        <!-- UNIT TESTS -->
         <profile>
-            <id>integration-tests</id>
+            <id>unit-tests</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
                 <module>app</module>
+            </modules>
+        </profile>
+
+        <!-- UNIT AND INTEGRATION TESTS -->
+        <profile>
+            <id>integration-tests</id>
+            <modules>
+                <module>app</module>
                 <module>app-test</module>
             </modules>
         </profile>
-        <profile>
-            <id>unit-tests</id>
-            <modules>
-                <module>app</module>
-            </modules>
-        </profile>
+
     </profiles>
 </project>

@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -48,6 +51,10 @@ public class MainActivity extends Activity {
      */
     public static class PlaceholderFragment extends Fragment {
 
+        private Button submitButton;
+        private EditText inputField;
+        private TextView inputTextDisplayField;
+
         public PlaceholderFragment() {
         }
 
@@ -55,7 +62,24 @@ public class MainActivity extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+            submitButton = (Button) rootView.findViewById(R.id.btn_display_text);
+            inputTextDisplayField = (TextView) rootView.findViewById(R.id.tf_display_text);
+            inputField = (EditText) rootView.findViewById(R.id.if_display_text);
+
+            submitButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    inputTextDisplayField.setText(inputField.getText());
+                }
+            });
+
             return rootView;
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
         }
     }
 }

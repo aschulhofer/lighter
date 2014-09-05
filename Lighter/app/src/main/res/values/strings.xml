@@ -5,4 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+
+    <string name="if_default_text">Enter text to display</string>
+
+    <string name="btn_default_text_display_button">Display text</string>
 </resources>
