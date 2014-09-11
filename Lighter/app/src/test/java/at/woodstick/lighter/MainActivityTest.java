@@ -15,6 +15,7 @@ import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
 import at.woodstick.lighter.MainActivity;
+import at.woodstick.lighter.R;
 
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
@@ -23,7 +24,7 @@ public class MainActivityTest {
 
     @Before
     public void setUp() {
-        mainActivity = Robolectric.buildActivity(MainActivity.class).create().start().resume().get();
+        mainActivity = Robolectric.buildActivity(MainActivity.class).create().visible().start().resume().get();
     }
 
     @After
