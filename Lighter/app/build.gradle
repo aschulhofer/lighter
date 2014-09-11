@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'robolectric'
 
 android {
     compileSdkVersion 19
@@ -12,7 +12,8 @@ android {
 
         androidTest.setRoot('test')
         androidTest {
-            java.srcDirs = ['src/test/java']
+            java.srcDirs = ['src/test/java']//, '../app-test/src/main/java']
+            resources.srcDirs = ['src/test/resources']
         }
     }
 
@@ -31,7 +32,7 @@ android {
     }
 }
 
-apply plugin: 'robolectric'
+
 
 //robolectric {
 //    include '**/*Test.class'
