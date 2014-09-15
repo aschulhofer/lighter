@@ -3,6 +3,7 @@ package at.woodstick.lighter.db;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import at.woodstick.lighter.db.tables.UserStoryTable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -18,12 +19,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-
+    public void onCreate(SQLiteDatabase database) {
+    	UserStoryTable.onCreate(database);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
+    	UserStoryTable.onUpgrade(database, oldVersion, newVersion);
     }
 }
