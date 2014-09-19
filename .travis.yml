@@ -3,6 +3,14 @@ jdk: oraclejdk7
 env:
   matrix:
     - ANDROID_TARGET=android-19  ANDROID_ABI=armeabi-v7a
+
+notifications:
+  email:
+    recipients:
+      - andreas.schulhofer@gmail.com
+      - doris.pedratscher@gmail.com
+#	  - g
+
 android:
   components:
   
